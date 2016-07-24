@@ -1,19 +1,16 @@
-/*div {
-border-style: solid;
-border-radius: 1px;
-border-color: blue;
-}*/
 body {
+    background-color: #e6e6ff;
     margin: 0px auto;
-    width: 1240px;
+    width: 1440px;
 }
 .body-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 10px;
     border-style: solid;
     border-radius: 1px;
-    /*background-color: #e6e6ff;*/
+    background-color: white;
 }
 .logo-search-user-admin-wrapper {
     display: flex;
@@ -24,8 +21,6 @@ body {
     width: 65%;
     height: 100%;
     margin: 0 auto;
-    border-bottom-style: solid;
-    border-radius: 1pt;
 }
 .logo h2 {
     font-size: 28pt;
@@ -37,10 +32,10 @@ body {
     justify-content: center;
     width: 20%;
     height: 100%;
-    border-left-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-radius: 1pt;
+}
+.search > .search-input {
+    border-radius: 10px;
+    margin-right: 5px;
 }
 .user-admin {
     display: flex;
@@ -48,9 +43,22 @@ body {
     justify-content: center;
     width: 15%;
     height: 100%;
-    margin: auto;
-    border-bottom-style: solid;
-    border-radius: 1pt;
+    float: right;
+}
+.user-dropdown {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+.user-dropdown > h4 {
+    margin-right: 5px;
+}
+.user-dropdown > .glyphicon-user {
+    font-size: 30px;
+}
+.user-dropdown > .glyphicon-triangle-bottom {
+    font-size: 10px;
 }
 .menu-task-wrapper {
     display: flex;
@@ -62,66 +70,53 @@ body {
     display: inline-block;
     width: 85%;
     height: 100%;
-    border-bottom-style: solid;
-    border-radius: 1pt;
 }
 .tasks-icons {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     width: 15%;
     height: 100%;
-    border-bottom-style: solid;
-    border-radius: 1pt;
     margin: auto;
 }
-.shortcut-sub-menu-wrapper {
-    display: flex;
-    flex-direction: inline;
-    width: 100%;
-    height: 40px;
+.tasks-icons > .glyphicon {
+    margin-right: 2px;
+    margin-left: 2px;
+    cursor: pointer;
 }
-.shortcut-list {
-    display: flex;
-    width: 25%;
-    height: 100%;
-    border-bottom-style: solid;
-    border-right-style: solid;
-    border-radius: 1pt;
-    margin: auto;
-}
-.sub-menu {
-    display: inline-block;
-    align-text: center;
-    align-items: center;
-    width: 75%;
-    height: 100%;
-    border-bottom-style: solid;
-    border-radius: 1pt;
-    margin: auto;
-}
-.nav-calendar-wrapper {
+.shortcut-nav-calendar-wrapper {
     display: flex;
     flex-direction: column;
-    width: 25%;
-    height: 800px;
+    width: 20%;
+    margin: 5px;
+    height: 840px;
+}
+.shortcut-list {
+    width: 100%;
+    float: left;
+}
+.shortcut-list button {
+    border-radius: 20px;
 }
 .navigation {
+    padding: 5px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #666;
     height: 60%;
     width: 100%;
-    border-bottom-style: solid;
-    border-right-style: solid;
-    border-radius: 1pt;
-    margin: auto;
+    margin-top: 5px;
 }
 .calendar {
     display: flex;
     flex-direction: column;
     height: 40%;
-    border-right-style: solid;
     width: 100%;
-    border-radius: 1pt;
-    margin: auto;
+    margin-top: 10px;
+    border-style: solid;
+    border-color: #AAA;
+
+
 }
 .datepicker {
     width: 100px;
@@ -133,22 +128,46 @@ body {
 }
 
 .datepicker .btn {
-    padding: 5px 10px;
-}
-.calendar-buttons {
-    flex-direction: horizontal;
-    position: absolute;
-    bottom: -280px;
+    padding: 8px 8px;
 }
 .nav-dynamic-wrapper {
     display: flex;
     flex-direction: inline;
-    height: 800px;
+    height: 840px;
     width: 100%;
 }
 .dynamic-part {
-    font-size: 46px;
     height: 100%;
     width: 75%;
-    border-radius: 1pt;
+}
+/*Shared styling among views*/
+.sub-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 48px;
+}
+.sub-menu > button {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.glyphicon.glyphicon-refresh {
+    font-size: 20px;
+}
+.glyphicon.glyphicon-pencil {
+    font-size: 20px;
+}
+.glyphicon.glyphicon-print {
+    font-size: 20px;
+}
+.glyphicon.glyphicon-cog {
+    font-size: 20px;
+}
+.glyphicon.glyphicon-envelope {
+    font-size: 20px;
+}
+.glyphicon.glyphicon-question-sign {
+    font-size: 20px;
 }

@@ -30,20 +30,34 @@
                     <h2>ESSArch</h2>
                 </div>
                 <div class="search">
-                    <input type="search"></input>
+                    <input type="search" class="search-input"></input>
                     <span class="glyphicon glyphicon-search" style="cursor: pointer"></span>
                 </div>
                 <div class="user-admin">
-                    <p>user administration<span class="glyphicon glyphicon-user"></span></p>
+                    <div class="edit-user" ng-controller="DropdownCtrl">
+                        <div class="btn-group" uib-dropdown is-open="status.isopen">
+                            <div class="user-dropdown" uib-dropdown-toggle ng-disabled="disabled">
+                                <h4>{{name}}</h4>
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span class="glyphicon glyphicon-triangle-bottom"></span>
+                            </div>
+                            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="user-dropdown">
+                                <li ng-repeat="choice in editUserOptions">
+                                    <a href>{{choice}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="menu-task-wrapper">
                 <div class="menu" ng-controller="TabsCtrl">
-                  <!--  <a href="#/"><button type="button" class="btn-primary">My Page</button></a>
-                    <a href="#/create-SIP"><button type="button" class="btn-primary">Create SIP</button></a>
-                    <a href="#/submit-SIP"><button type="button" class="btn-primary">Submit SIP</button></a>
-                    <a href="#/recieve-SIP"><button type="button" class="btn-primary">Recieve SIP</button></a>
-                  -->
+                    <!--  <a href="#/"><button type="button" class="btn-primary">My Page</button></a>
+                        <a href="#/create-SIP"><button type="button" class="btn-primary">Create SIP</button></a>
+                        <a href="#/submit-SIP"><button type="button" class="btn-primary">Submit SIP</button></a>
+                        <a href="#/recieve-SIP"><button type="button" class="btn-primary">Recieve SIP</button></a>
+                    -->
                     <ul class="nav nav-tabs" ng-controller="TabsCtrl">
                         <li ng-class="tabClass(tab)" ng-repeat="tab in tabs" tab="tab"><a href="{{tab.link}}" ng-click="setSelectedTab(tab)">{{tab.label}}</a></li>
                     </ul>
@@ -59,40 +73,27 @@
 
                 </div>
             </div>
-            <div class="shortcut-sub-menu-wrapper">
-                <div class="shortcut-list" ng-controller="DropdownCtrl">
-                    <div class="btn-group" uib-dropdown is-open="status.isopen">
-                        <button id="single-button" type="button" class="btn-primary btn-sm" uib-dropdown-toggle ng-disabled="disabled">
-                            Shortcut list<span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                            <li role="menuitem"><a href="#">Action</a></li>
-                            <li role="menuitem"><a href="#">Another action</a></li>
-                            <li role="menuitem"><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li role="menuitem"><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sub-menu">
-                    <button type="button" class="btn-primary btn-sm">Info page</button>
-                    <button type="button" class="btn-primary btn-sm">Prepare IP</button>
-                    <button type="button" class="btn-primary btn-sm">Data selection</button>
-                    <button type="button" class="btn-primary btn-sm">Data extraction</button>
-                    <button type="button" class="btn-primary btn-sm">Manage Data</button>
-                    <button type="button" class="btn-primary btn-sm">IP Approval</button>
-                    <button type="button" class="btn-primary btn-sm">IP Management</button>
-                </div>
-            </div>
             <div class="nav-dynamic-wrapper">
-                <div class="nav-calendar-wrapper">
+                <div class="shortcut-nav-calendar-wrapper">
+                    <div class="shortcut-list" ng-controller="DropdownCtrl">
+                        <div class="btn-group" uib-dropdown is-open="status.isopen">
+                            <button id="single-button" type="button" class="btn-primary btn-lg" uib-dropdown-toggle ng-disabled="disabled">
+                                Shortcut list<span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                <li ng-repeat="choice in items">
+                                    <a href>{{choice}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div ng-controller="AngularTreeCtrl" class="navigation">
 
                         Navigation
                         </br>
                         <p>
                         <treecontrol class="tree-light"
-                                     tree-model="barnOchUngdom"
+n                                     tree-model="barnOchUngdom"
                                      options="treeOptions"
                                      on-selection="showSelected(node)"
                                      selected-node="node1">
@@ -117,11 +118,11 @@
                     </div>
                     <div class="calendar">
                         <style>
-                            .full button span {
-                                background-color: limegreen;
-                                border-radius: 16px;
-                                color: black;
-                            }
+.full button span {
+    background-color: limegreen;
+    border-radius: 16px;
+    color: black;
+}
                               .partially button span {
                                   background-color: orange;
                                   border-radius: 16px;
@@ -130,7 +131,6 @@
                         </style>
                         <div ng-controller="DatepickerCtrl">
 
-                            <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
                             <div class="datepicker" style="display:inline-block;">
                                 <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
                             </div>
@@ -141,10 +141,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div ng-view class="dynamic-part">
-                </div>
             </div>
+            <div ng-view class="dynamic-part">
+            </div>
+        </div>
         </div>
     </body>
 </html>
