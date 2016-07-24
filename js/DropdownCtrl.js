@@ -1,9 +1,15 @@
 angular.module('myApp').controller('DropdownCtrl', function ($scope, $log) {
   $scope.items = [
-    'The first choice!',
-    'And another choice for you.',
-    'but wait! A third!'
+    'Shortcut 1',
+    'Shortcut 2',
+    'Shortcut 3'
   ];
+  $scope.editUserOptions = [
+    'Edit profile',
+    'Settings',
+    'Log off'
+  ];
+  $scope.name = "Björn Skog";
 
   $scope.status = {
     isopen: false
