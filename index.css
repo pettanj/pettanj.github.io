@@ -6,6 +6,8 @@ body {
 .body-wrapper {
     display: flex;
     flex-direction: column;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
     width: 100%;
     padding: 10px;
     border-style: solid;
@@ -14,6 +16,7 @@ body {
 }
 .logo-search-user-admin-wrapper {
     display: flex;
+    display: -webkit-flex
     width: 100%;
     height: 50px;
 }
@@ -30,6 +33,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
     width: 20%;
     height: 100%;
 }
@@ -41,6 +47,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
     width: 15%;
     height: 100%;
     float: right;
@@ -48,6 +57,9 @@ body {
 .user-dropdown {
     display: flex;
     flex-direction: row;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+
     cursor: pointer;
     -webkit-user-select: none;
 }
@@ -63,6 +75,8 @@ body {
 .menu-task-wrapper {
     display: flex;
     flex-direction: inline;
+    display: -webkit-flex;
+    -webkit-flex-direction: inline;
     width: 100%;
     height: 45px;
 }
@@ -75,6 +89,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
     width: 15%;
     height: 100%;
     margin: auto;
@@ -87,6 +104,8 @@ body {
 .shortcut-nav-calendar-wrapper {
     display: flex;
     flex-direction: column;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
     width: 20%;
     margin: 5px;
     height: 840px;
@@ -110,6 +129,8 @@ body {
 .calendar {
     display: flex;
     flex-direction: column;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
     height: 40%;
     width: 100%;
     margin-top: 10px;
@@ -133,6 +154,8 @@ body {
 .nav-dynamic-wrapper {
     display: flex;
     flex-direction: inline;
+    display: -webkit-flex;
+    -webkit-flex-direction: inline;
     height: 840px;
     width: 100%;
 }
@@ -145,6 +168,9 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
     height: 48px;
 }
 .sub-menu > button {
