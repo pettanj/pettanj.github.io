@@ -1,4 +1,4 @@
-angular.module('myApp', []).controller('myCtrl', function myCtrl($scope) {
+angular.module('myApp').controller('myCtrl', function myCtrl($scope) {
     $scope.people = [
     { name: "Joachim",
         age: 22

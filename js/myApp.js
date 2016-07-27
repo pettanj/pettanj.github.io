@@ -4,7 +4,8 @@ angular.module('myApp', ['ngRoute', 'treeControl', 'ui.bootstrap']).config(funct
         templateUrl: 'my_page.html'
     })
     .when('/create-SIP', {
-        templateUrl: 'create_sip.html'
+        templateUrl: 'create_sip.html',
+        controller: 'CreateSipCtrl'
     })
     .when('/submit-SIP', {
         templateUrl: 'submit_sip.html'

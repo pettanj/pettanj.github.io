@@ -24,6 +24,7 @@ body {
     width: 65%;
     height: 100%;
     margin: 0 auto;
+    cursor: pointer;
 }
 .logo h2 {
     font-size: 28pt;

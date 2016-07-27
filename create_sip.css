@@ -1,1 +1,50 @@
+.content-wrapper {
+display: flex;
+display: -webkit-flex;
+flex-direction: column;
+-webkit-flex-direction: column;
+height: 800px;
 
+}
+.glyphicon-triangle-bottom {
+    cursor: pointer;
+}
+.content-wrapper > div {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.btn-primary {
+    margin-left: 10px;
+}
+.list-view {
+    height: 15%;
+    border-style: solid;
+    border-color: #666;
+    border-radius: 15px;
+}
+.select-view {
+    height: 15%;
+    border-style: solid;
+    border-color: #666;
+    border-radius: 15px;
+}
+.sub-select-view {
+    height: 15%;
+    border-style: solid;
+    border-color: #666;
+    border-radius: 15px;
+}
+
+.edit-view {
+    height: 15%;
+    border-style: solid;
+    border-color: #666;
+    border-radius: 15px;
+}
+
+.eventlog-view {
+    height: 15%;
+    border-style: solid;
+    border-color: #666;
+    border-radius: 15px;
+}
