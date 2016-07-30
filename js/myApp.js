@@ -1,11 +1,11 @@
-angular.module('myApp', ['ngRoute', 'treeControl', 'ui.bootstrap']).config(function($routeProvider) {
+angular.module('myApp', ['ngRoute', 'treeControl', 'ui.bootstrap', 'formly', 'formlyBootstrap']).config(function($routeProvider, formlyConfigProvider) {
     $routeProvider
-    .when('/', {
-        templateUrl: 'my_page.html'
-    })
+        .when('/', {
+            templateUrl: 'my_page.html'
+        })
     .when('/create-SIP', {
         templateUrl: 'create_sip.html',
-        controller: 'CreateSipCtrl'
+        controller: 'CreateSipCtrl as vm'
     })
     .when('/submit-SIP', {
         templateUrl: 'submit_sip.html'

@@ -7,8 +7,9 @@
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
         <script src="js/ui-bootstrap-tpls-1.3.3.min.js"></script>
-        <script src="bower_components/angular-formly/dist/formly.min.js"></script>
         <script src="bower_components/api-check/dist/api-check.min.js"></script>
+        <script src="bower_components/angular-formly/dist/formly.min.js"></script>
+        <script src="/home/petrus/Documents/jobb/essarch_test/bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
         <!--App -->
         <!--Controllers-->
     </head>
@@ -39,8 +40,15 @@
                     <h1>Sub Select view</h1>
                     <button type="button" ng-click="toggleEditView()" class="btn btn-primary">show/hide next</button>
                 </div>
-                <div ng-show="edit" class="edit-view">
+                <div ng-show="edit" ng-controller="CreateSipCtrl" class="edit-view">
                     <h1>Edit view</h1>
+                    <form ng-submit="vm.onSubmit()" novalidate>
+                        <formly-form model="vm.archivistOrganisationModel" fields="vm.archivistOrganisationFields" options="vm.options">
+                        </formly-form>
+                        <formly-form model="vm.creatorOrganisationModel" fields="vm.creatorOrganisationFields">
+                        </formly-form>
+                        <button type="submit" class="btn btn-info submit-button">Submit</button>
+                    </form>
                     <button type="button" ng-click="toggleEventlogView()" class="btn btn-primary">Show/hide next</span>
                 </div>
                 <div ng-show="eventlog" class="eventlog-view">

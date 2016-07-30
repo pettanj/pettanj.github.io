@@ -10,10 +10,13 @@
         </style>
 
         <!--Angular Scripts -->
+        <script src="bower_components/api-check/dist/api-check.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
         <script src="js/ui-bootstrap-tpls-1.3.3.min.js"></script>
         <script src="bower_components/angular-tree-control/angular-tree-control.js"></script>
+        <script src="bower_components/angular-formly/dist/formly.js"></script>
+        <script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
         <!--App -->
         <script src="js/myApp.js"></script>
         <!--Controllers-->
@@ -143,10 +146,11 @@ n                                     tree-model="barnOchUngdom"
                             </div>
                         </div>
                     </div>
+                </div>
+                <div ng-view class="dynamic-part">
+                </div>
+
             </div>
-            <div ng-view class="dynamic-part">
-            </div>
-        </div>
         </div>
     </body>
 </html>
