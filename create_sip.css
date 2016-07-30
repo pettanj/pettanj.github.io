@@ -20,20 +20,20 @@ height: 800px;
     border-radius: 15px;
 }
 .select-view {
-    height: 15%;
+    height: 30%;
     border-style: solid;
     border-color: #666;
     border-radius: 15px;
 }
 .sub-select-view {
-    height: 15%;
+    height: 100px;;
     border-style: solid;
     border-color: #666;
     border-radius: 15px;
 }
 
 .edit-view {
-    height: 50%;
+    height: 75%;
     border-style: solid;
     border-color: #666;
     border-radius: 15px;
@@ -56,4 +56,5 @@ height: 800px;
 }
 .formly-field {
     width: 23%;
+    margin-left: 5px;
 }

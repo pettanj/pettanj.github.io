@@ -1,4 +1,4 @@
-angular.module('myApp').controller('CreateSipCtrl', function ($scope, $location){
+angular.module('myApp').controller('CreateSipCtrl', function ($scope, $location, $sce){
     var vm = this;
 
     // Archivist
@@ -10,6 +10,7 @@ angular.module('myApp').controller('CreateSipCtrl', function ($scope, $location)
     {
         key: 'ArchivistOrganisation',
         type: 'select',
+        defaultValue: 'Sigtuna Kommun',
         templateOptions: {
             label: 'Archivist organisation',
             placeholder: 'ArchivistOrganisation',
@@ -55,13 +56,14 @@ angular.module('myApp').controller('CreateSipCtrl', function ($scope, $location)
     // Creator
     // Organisation
     vm.creatorOrganisationModel = {
-        creatorOrganisation: "Riksarkivet"
+        CreatorOrganisation: "Riksarkivet"
     };
 
     vm.creatorOrganisationFields = [
     {
         key: 'CreatorOrganisation',
         type: 'input',
+        defaultValue: 'Riksarkivet',
         templateOptions: {
             label: 'Creator organisation',
             placeholder: 'Creator organisation'
@@ -93,14 +95,191 @@ angular.module('myApp').controller('CreateSipCtrl', function ($scope, $location)
     }
     ];
 
-    vm.onSubmit = function() {
-        alert(JSON.stringify(vm.archivistOrganisationModel) + " " + JSON.stringify(vm.creatorOrganisationModel));
+
+    // Producer
+    // organisation
+    vm.producerOrganisationModel = {
+    };
+
+    vm.producerOrganisationFields = [
+    {
+        key: 'ProducerOrganisation',
+        type: 'input',
+        templateOptions: {
+            label: 'Producer organisation',
+            placeholder: 'Producer organisation'
+        }
+    },
+    {
+        key: 'ProducerIndividual',
+        type: 'input',
+        templateOptions: {
+            label: 'Producer individual',
+            placeholder: 'Producer individual'
+        }
+    },
+    {
+        key: 'ProducerOrganisationSoftware',
+        type: 'input',
+        templateOptions: {
+            label: 'Producer organisation software',
+            placeholder: 'Producer organisation software'
+        }
+    },
+    {
+        key: 'ProducerOrganisationSoftwareIdentity',
+        type: 'input',
+        templateOptions: {
+            label: 'Producer organisation software identity',
+            placeholder: 'Producer organisation software identity'
+        }
     }
+    ];
+
+
+    // IP Owner
+    // organisation
+    vm.ipOwnerOrganisationModel = {
+    };
+
+    vm.ipOwnerOrganisationFields = [
+    {
+        key: 'ipOwnerOrganisation',
+        type: 'input',
+        templateOptions: {
+            label: 'IP owner organisation',
+            placeholder: 'IP owner organisation'
+        }
+    },
+    {
+        key: 'IpOwnerIndividual',
+        type: 'input',
+        templateOptions: {
+            label: 'IP owner individual',
+            placeholder: 'IP owner individual'
+        }
+    },
+    {
+        key: 'IpOwnerOrganisationSoftware',
+        type: 'input',
+        templateOptions: {
+            label: 'IP owner organisation software',
+            placeholder: 'IP owner organisation software'
+        }
+    },
+    {
+        key: 'IpOwnerOrganisationSoftwareIdentity',
+        type: 'input',
+        templateOptions: {
+            label: 'IP owner organisation software identity',
+            placeholder: 'IP owner organisation software identity'
+        }
+    }
+    ];
+
+
+    // Editor
+    // organisation
+    vm.editorOrganisationModel = {
+    };
+
+    vm.editorOrganisationFields = [
+    {
+        key: 'EditorOrganisation',
+        type: 'input',
+        templateOptions: {
+            label: 'Editor organisation',
+            placeholder: 'Editor organisation'
+        }
+    },
+    {
+        key: 'EditorIndividual',
+        type: 'input',
+        templateOptions: {
+            label: 'Editor individual',
+            placeholder: 'Editor indivivual'
+        }
+    },
+    {
+        key: 'EditorOrganisationSoftware',
+        type: 'input',
+        templateOptions: {
+            label: 'Editor organisation software',
+            placeholder: 'Editor organisation software'
+        }
+    },
+    {
+        key: 'EditorOrganisationSoftwareIdentity',
+        type: 'input',
+        templateOptions: {
+            label: 'Editor organisation software identity',
+            placeholder: 'Editor organisation software identity'
+        }
+    }
+    ];
+
+
+    // Preservation
+    // organisation
+    vm.preservationOrganisationModel = {
+    };
+
+    vm.preservationOrganisationFields = [
+    {
+        key: 'PreservationOrganisation',
+        type: 'input',
+        templateOptions: {
+            label: 'Preservation organisation',
+            placeholder: 'Preservation organisation'
+        }
+    },
+    {
+        key: 'PreservationIndividual',
+        type: 'input',
+        templateOptions: {
+            label: 'Preservation individual',
+            placeholder: 'Preservation individual'
+        }
+    },
+    {
+        key: 'PreservationOrganisationSoftware',
+        type: 'input',
+        templateOptions: {
+            label: 'Preservation organisation software',
+            placeholder: 'Preservation organisation software'
+        }
+    },
+    {
+        key: 'PreservationOrganisationSoftwareIdentity',
+        type: 'input',
+        templateOptions: {
+            label: 'Preservation organisation software identity',
+            placeholder: 'Preservation organisation software identity'
+        }
+    }
+    ];
+
+    // onSubmit function
+    // prints stringified JSON representation of entered fields
+    // will probably save the data later on
+    vm.onSubmit = function() {
+        alert(JSON.stringify(vm.archivistOrganisationModel) + " "
+                + JSON.stringify(vm.creatorOrganisationModel) + " "
+                + JSON.stringify(vm.producerOrganisationModel) + " "
+                + JSON.stringify(vm.ipOwnerOrganisationModel) + " "
+                + JSON.stringify(vm.editorOrganisationModel) + " "
+                + JSON.stringify(vm.preservationOrganisationModel));
+    }
+
+    // Page selection
+    //      &
+    // ng-show code
+
     $scope.select = false;
     $scope.subSelect = false;
     $scope.edit = true;
     $scope.eventlog = false;
-
+    $scope.htmlPopover = $sce.trustAsHtml('<font size="3" color="red">Currently disabled</font>');
     $scope.pages = ['Info', 'Prepare Ip', 'Selection', 'Extraction', 'Manage Data', 'IP Approval', 'IP Management'];
     $scope.selectedPage = $scope.pages[0];
 
@@ -124,6 +303,7 @@ angular.module('myApp').controller('CreateSipCtrl', function ($scope, $location)
         } else {
             $scope.edit = false;
         }
+        alert("currently disabled");
     };
     $scope.toggleEventlogView = function() {
         if($scope.eventlog == false){

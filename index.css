@@ -109,7 +109,7 @@ body {
     -webkit-flex-direction: column;
     width: 20%;
     margin: 5px;
-    height: 840px;
+    height: 1000px;
 }
 .shortcut-list {
     width: 100%;
@@ -157,7 +157,7 @@ body {
     flex-direction: inline;
     display: -webkit-flex;
     -webkit-flex-direction: inline;
-    height: 840px;
+    height: 1000px;
     width: 100%;
 }
 .dynamic-part {

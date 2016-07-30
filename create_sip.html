@@ -30,15 +30,16 @@
                 <h3>Selected page: {{selectedPage}}</h3>
                 <div class="list-view">
                     <h1>List view</h1>
-                    <button type="button" ng-click="toggleSelectView()" class="btn btn-primary">Show/hide next</button>
+                    <button type="button" ng-click="toggleSelectView()" class="btn btn-primary">Show/hide select view</button>
+                    <button uib-popover-html="htmlPopover" popover-is-open="popoverIsOpen" ng-click="popoverIsOpen = !popoverIsOpen" type="button" class="btn btn-primary">Show/hide edit view</button>
+                    <button type="button" ng-click="toggleSubSelectView()" class="btn btn-primary">Show/hide sub select view</button>
+                    <button type="button" ng-click="toggleEventlogView()" class="btn btn-primary">Show/hide sub eventlog view</button>
                 </div>
                 <div ng-show="select" class="select-view">
                     <h1>Select view</h1>
-                    <button type="button "ng-click="toggleSubSelectView()" class="btn btn-primary">Show/hide next</button>
                 </div>
                 <div ng-show="subSelect" class="sub-select-view">
                     <h1>Sub Select view</h1>
-                    <button type="button" ng-click="toggleEditView()" class="btn btn-primary">show/hide next</button>
                 </div>
                 <div ng-show="edit" ng-controller="CreateSipCtrl" class="edit-view">
                     <h1>Edit view</h1>
@@ -47,9 +48,16 @@
                         </formly-form>
                         <formly-form model="vm.creatorOrganisationModel" fields="vm.creatorOrganisationFields">
                         </formly-form>
+                         <formly-form model="vm.producerOrganisationModel" fields="vm.producerOrganisationFields">
+                        </formly-form>
+                         <formly-form model="vm.ipOwnerOrganisationModel" fields="vm.ipOwnerOrganisationFields">
+                        </formly-form>
+                         <formly-form model="vm.editorOrganisationModel" fields="vm.editorOrganisationFields">
+                        </formly-form>
+                         <formly-form model="vm.preservationOrganisationModel" fields="vm.preservationOrganisationFields">
+                        </formly-form>
                         <button type="submit" class="btn btn-info submit-button">Submit</button>
                     </form>
-                    <button type="button" ng-click="toggleEventlogView()" class="btn btn-primary">Show/hide next</span>
                 </div>
                 <div ng-show="eventlog" class="eventlog-view">
                     <h1>Eventlog and submit buttons</h1>
