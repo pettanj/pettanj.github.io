@@ -299,11 +299,12 @@ angular.module('myApp').controller('CreateSipCtrl', function ($scope, $location,
     };
     $scope.toggleEditView = function () {
         if($scope.edit == false){
+            $('.edit-view').show();
             $scope.edit = true;
         } else {
+            $('.edit-view').hide();
             $scope.edit = false;
         }
-        alert("currently disabled");
     };
     $scope.toggleEventlogView = function() {
         if($scope.eventlog == false){
