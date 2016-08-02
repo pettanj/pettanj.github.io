@@ -9,38 +9,65 @@ height: 800px;
 .glyphicon-triangle-bottom {
     cursor: pointer;
 }
+.column-label {
+    margin: auto;
+}
+.progress {
+    width: 150px;
+}
+.content-wrapper {
+    height: 100%;
+    width: 100%;
+}
 .content-wrapper > div {
     margin-bottom: 10px;
     margin-left: 10px;
 }
 .list-view {
-    height: 15%;
+    height: 40%;
     border-style: solid;
     border-color: #666;
     border-radius: 15px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    margin-top: 8px;
+}
+.edit-view .submit-button {
+    margin-bottom: 5px;
+}
+.list-view-buttons {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    justify-content: left;
+    -webkit-justify-content: left;
+    margin-bottom: 5px;
+}
+.list-view-buttons .btn {
+    margin-left: 10px;
 }
 .select-view {
-    height: 30%;
     border-style: solid;
     border-color: #666;
     border-radius: 15px;
 }
 .sub-select-view {
-    height: 100px;;
     border-style: solid;
     border-color: #666;
     border-radius: 15px;
 }
 
 .edit-view {
-    height: 75%;
+    height: 60%;
     border-style: solid;
     border-color: #666;
     border-radius: 15px;
 }
 
 .eventlog-view {
-    height: 15%;
     border-style: solid;
     border-color: #666;
     border-radius: 15px;

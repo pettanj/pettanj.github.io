@@ -1,17 +1,25 @@
 angular.module('myApp').controller('CreateSipCtrl', function ($scope, $location, $sce){
     var vm = this;
+    // List view
+    $scope.rowCollection = [
+        {label: 'Bygglov 2012', content: 'ERMS', responsible: 'Kalle Karlsson', date: '2013-01-14', state: 'Submitted', status: 100},
+        {label: 'Bygglov 2013', content: 'ERMS', responsible: 'Eva Rööse', date: '2013-12-30', state: 'Created', status: 75},
+        {label: 'Bygglov 2014', content: 'ERMS', responsible: 'Ove Jansson', date: '2014-12-19', state: 'Preparing', status: 40}
+    ];
+    // Progress bar handler
+    $scope.max = 100;
 
-    // Archivist
-    // Organisation
-    vm.archivistOrganisationModel = {
-        ArchivistOrganisation: "Sigtuna Kommun"
-    };
-    vm.archivistOrganisationFields = [
-    {
-        key: 'ArchivistOrganisation',
-        type: 'select',
-        defaultValue: 'Sigtuna Kommun',
-        templateOptions: {
+// Archivist
+// Organisation
+vm.archivistOrganisationModel = {
+    ArchivistOrganisation: "Sigtuna Kommun"
+};
+vm.archivistOrganisationFields = [
+{
+    key: 'ArchivistOrganisation',
+    type: 'select',
+    defaultValue: 'Sigtuna Kommun',
+    templateOptions: {
             label: 'Archivist organisation',
             placeholder: 'ArchivistOrganisation',
             options: [
